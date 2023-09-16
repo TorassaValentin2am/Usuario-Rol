@@ -16,7 +16,7 @@ CREATE TABLE Roles (
 CREATE TABLE Usuarios (
     ID INT NOT NULL IDENTITY PRIMARY KEY,
     NombreDeUsuario NVARCHAR(50) UNIQUE,
-    Email NVARCHAR(255),
+    Email NVARCHAR(255) UNIQUE,
     Nombre NVARCHAR(50),
     Apellido NVARCHAR(50),
     Estado BIT NULL
