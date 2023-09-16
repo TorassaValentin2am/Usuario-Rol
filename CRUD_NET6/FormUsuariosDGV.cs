@@ -64,7 +64,7 @@ namespace CRUD
 
         private void CargarRolesdeUsuario()
         {
-            if (dgvUsuarios.Rows.Count > 0)
+            if (dgvUsuarios.Rows.Count > 0 && dgvUsuarios.SelectedRows.Count > 0)
             {
                 dgvRolesAsignados.DataSource = null;
                 dgvRolesAsignados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

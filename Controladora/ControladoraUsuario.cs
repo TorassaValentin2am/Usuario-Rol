@@ -42,8 +42,9 @@ namespace Controladora
             try
             {
                 var listaUsuarios = RepositorioUsuario.Instancia.RecuperarUsuarios();
-                var usuarioEncontrado = listaUsuarios.FirstOrDefault(x => x.NombreDeUsuario == usuario.NombreDeUsuario);
-                if (usuarioEncontrado == null)
+                var usuarioEncontradoNombre = listaUsuarios.FirstOrDefault(x => x.NombreDeUsuario == usuario.NombreDeUsuario);
+                var usuarioEncontradoEmail = listaUsuarios.FirstOrDefault(x => x.Email == usuario.Email);
+                if (usuarioEncontradoNombre == null && usuarioEncontradoEmail == null)
                 {
                     var ok = RepositorioUsuario.Instancia.Agregar(usuario);
                     if (ok)
@@ -55,9 +56,13 @@ namespace Controladora
                         return $"El Usuario {usuario.NombreDeUsuario} no se ha podido agregar";
                     }
                 }
+                else if (usuarioEncontradoNombre == null)
+                {
+                    return $"El Usuario {usuario.NombreDeUsuario} con ese nombre ya existe.";
+                }
                 else
                 {
-                    return $"El Usuario {usuario.NombreDeUsuario} ya existe.";
+                    return $"El Usuario {usuario.NombreDeUsuario} con ese mail ya existe.";
                 }
             }
             catch (Exception)

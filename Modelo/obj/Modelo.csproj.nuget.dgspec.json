@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Valen\\Desktop\\Programas en Base de Datos\\Rol-Usuarios\\Modelo\\Modelo.csproj": {}
+    "C:\\Users\\Avatar\\Desktop\\Usuario-Rol\\Usuario-Rol\\Modelo\\Modelo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Valen\\Desktop\\Programas en Base de Datos\\Rol-Usuarios\\Modelo\\Modelo.csproj": {
+    "C:\\Users\\Avatar\\Desktop\\Usuario-Rol\\Usuario-Rol\\Modelo\\Modelo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Valen\\Desktop\\Programas en Base de Datos\\Rol-Usuarios\\Modelo\\Modelo.csproj",
+        "projectUniqueName": "C:\\Users\\Avatar\\Desktop\\Usuario-Rol\\Usuario-Rol\\Modelo\\Modelo.csproj",
         "projectName": "Modelo",
-        "projectPath": "C:\\Users\\Valen\\Desktop\\Programas en Base de Datos\\Rol-Usuarios\\Modelo\\Modelo.csproj",
-        "packagesPath": "C:\\Users\\Valen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Valen\\Desktop\\Programas en Base de Datos\\Rol-Usuarios\\Modelo\\obj\\",
+        "projectPath": "C:\\Users\\Avatar\\Desktop\\Usuario-Rol\\Usuario-Rol\\Modelo\\Modelo.csproj",
+        "packagesPath": "C:\\Users\\Avatar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Avatar\\Desktop\\Usuario-Rol\\Usuario-Rol\\Modelo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Valen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Avatar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

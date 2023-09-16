@@ -72,7 +72,7 @@
             // lblUsuarios
             // 
             lblUsuarios.AutoSize = true;
-            lblUsuarios.Location = new Point(241, 9);
+            lblUsuarios.Location = new Point(265, 10);
             lblUsuarios.Name = "lblUsuarios";
             lblUsuarios.Size = new Size(52, 15);
             lblUsuarios.TabIndex = 6;
@@ -84,6 +84,7 @@
             dgvUsuarios.Location = new Point(12, 28);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowTemplate.Height = 25;
+            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUsuarios.Size = new Size(561, 195);
             dgvUsuarios.TabIndex = 5;
             dgvUsuarios.SelectionChanged += dgvUsuarios_SelectionChanged;

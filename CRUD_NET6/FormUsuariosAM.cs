@@ -22,7 +22,7 @@ namespace CRUD
         public FormUsuariosAM(Usuario usuarioModificar)
         {
             InitializeComponent();
-            usuario = usuarioModificar;           
+            usuario = usuarioModificar;
             modificar = true;
             //Lo hago para no trabajar directamente sobre los roles del usuario, ocasionando cambios irreversibles
             rolesAsignados = usuarioModificar.Roles.ToList();
@@ -137,7 +137,7 @@ namespace CRUD
             dgvRolesDisponibles.DataSource = null;
             dgvRolesDisponibles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRolesDisponibles.DataSource = ControladoraRol.Instancia.RecuperarRoles();
-          
+
             dgvRolesAsignados.DataSource = null;
             dgvRolesAsignados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRolesAsignados.DataSource = rolesAsignados;

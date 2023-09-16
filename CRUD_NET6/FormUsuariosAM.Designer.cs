@@ -45,6 +45,7 @@
             dgvRolesDisponibles = new DataGridView();
             label4 = new Label();
             dgvRolesAsignados = new DataGridView();
+            listView1 = new ListView();
             ((System.ComponentModel.ISupportInitialize)dgvRolesDisponibles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRolesAsignados).BeginInit();
             SuspendLayout();
@@ -198,11 +199,20 @@
             dgvRolesAsignados.Size = new Size(244, 172);
             dgvRolesAsignados.TabIndex = 52;
             // 
+            // listView1
+            // 
+            listView1.Location = new Point(364, 269);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(121, 97);
+            listView1.TabIndex = 54;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // FormUsuariosAM
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(852, 272);
+            ClientSize = new Size(852, 392);
+            Controls.Add(listView1);
             Controls.Add(label4);
             Controls.Add(dgvRolesAsignados);
             Controls.Add(btnEliminar);
@@ -254,5 +264,6 @@
         private DataGridView dgvRolesDisponibles;
         private Label label4;
         private DataGridView dgvRolesAsignados;
+        private ListView listView1;
     }
 }
