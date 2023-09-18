@@ -84,6 +84,7 @@
             dgvUsuarios.Location = new Point(12, 28);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowTemplate.Height = 25;
+            dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUsuarios.Size = new Size(561, 195);
             dgvUsuarios.TabIndex = 5;
             dgvUsuarios.SelectionChanged += dgvUsuarios_SelectionChanged;

@@ -15,18 +15,26 @@ namespace CRUD
         {
             InitializeComponent();
             usuario = new Usuario();
-            rolesAsignados = usuario.Roles.ToList();
-            ActualizarGrillas();
+            rolesAsignados = new List<Rol>();
+
+
+            dgvRolesDisponibles.DataSource = null;
+            dgvRolesDisponibles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRolesDisponibles.DataSource = ControladoraRol.Instancia.RecuperarRoles();
+
+
+            LlenarCombo();
         }
 
         public FormUsuariosAM(Usuario usuarioModificar)
         {
             InitializeComponent();
-            usuario = usuarioModificar;           
+            usuario = usuarioModificar;
             modificar = true;
             //Lo hago para no trabajar directamente sobre los roles del usuario, ocasionando cambios irreversibles
             rolesAsignados = usuarioModificar.Roles.ToList();
             ActualizarGrillas();
+            LlenarCombo();
         }
 
 
@@ -43,7 +51,8 @@ namespace CRUD
                         NombreDeUsuario = txtUsername.Text,
                         Email = txtEmail.Text,
                         Nombre = txtNombre.Text,
-                        Apellido = txtApellido.Text
+                        Apellido = txtApellido.Text,
+                        Configuracion = (Configuraciones)cmbConfiguraciones.SelectedItem
                     };
 
                     foreach (DataGridViewRow row in dgvRolesAsignados.Rows)
@@ -64,7 +73,8 @@ namespace CRUD
                         NombreDeUsuario = txtUsername.Text,
                         Email = txtEmail.Text,
                         Nombre = txtNombre.Text,
-                        Apellido = txtApellido.Text
+                        Apellido = txtApellido.Text,
+                        Configuracion = (Configuraciones)cmbConfiguraciones.SelectedItem
                     };
 
                     foreach (DataGridViewRow row in dgvRolesAsignados.Rows)
@@ -125,6 +135,7 @@ namespace CRUD
                 txtEmail.Text = usuario.Email;
                 txtNombre.Text = usuario.Nombre;
                 txtApellido.Text = usuario.Apellido;
+                cmbConfiguraciones.SelectedItem = usuario.Configuracion;
             }
             else
             {
@@ -137,7 +148,7 @@ namespace CRUD
             dgvRolesDisponibles.DataSource = null;
             dgvRolesDisponibles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRolesDisponibles.DataSource = ControladoraRol.Instancia.RecuperarRoles();
-          
+
             dgvRolesAsignados.DataSource = null;
             dgvRolesAsignados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRolesAsignados.DataSource = rolesAsignados;
@@ -206,6 +217,12 @@ namespace CRUD
                     MessageBox.Show("El rol seleccionado no está asociado al usuario.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void LlenarCombo()
+        {
+            cmbConfiguraciones.DataSource = null;
+            cmbConfiguraciones.DataSource = ControladoraConfiguracion.Instancia.RecuperarConfiguraciones();
         }
     }
 }

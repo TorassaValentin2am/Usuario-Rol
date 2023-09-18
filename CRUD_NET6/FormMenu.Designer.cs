@@ -31,6 +31,7 @@
             btnRoles = new Button();
             btnUsuarios = new Button();
             lblMenu = new Label();
+            btnConfiguracion = new Button();
             SuspendLayout();
             // 
             // btnRoles
@@ -45,7 +46,7 @@
             // 
             // btnUsuarios
             // 
-            btnUsuarios.Location = new Point(12, 102);
+            btnUsuarios.Location = new Point(12, 187);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(165, 48);
             btnUsuarios.TabIndex = 1;
@@ -62,11 +63,22 @@
             lblMenu.TabIndex = 3;
             lblMenu.Text = "Menu";
             // 
+            // btnConfiguracion
+            // 
+            btnConfiguracion.Location = new Point(12, 109);
+            btnConfiguracion.Name = "btnConfiguracion";
+            btnConfiguracion.Size = new Size(165, 48);
+            btnConfiguracion.TabIndex = 4;
+            btnConfiguracion.Text = "Configuracion";
+            btnConfiguracion.UseVisualStyleBackColor = true;
+            btnConfiguracion.Click += btnConfiguracion_Click;
+            // 
             // FormMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(186, 173);
+            ClientSize = new Size(186, 247);
+            Controls.Add(btnConfiguracion);
             Controls.Add(lblMenu);
             Controls.Add(btnUsuarios);
             Controls.Add(btnRoles);
@@ -85,5 +97,6 @@
         private Button btnRoles;
         private Button btnUsuarios;
         private Label lblMenu;
+        private Button btnConfiguracion;
     }
 }

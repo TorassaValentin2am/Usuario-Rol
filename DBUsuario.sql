@@ -13,12 +13,23 @@ CREATE TABLE Roles (
     Estado BIT NULL
 );
 
+CREATE TABLE Configuracion (
+    ID INT NOT NULL IDENTITY PRIMARY KEY,
+    NombreConfiguracion NVARCHAR(50) UNIQUE,
+    Valor DECIMAL(18, 2),
+    Descripcion NVARCHAR(255),
+    Notificaciones BIT,
+    Estado BIT NULL
+);
+
+
 CREATE TABLE Usuarios (
     ID INT NOT NULL IDENTITY PRIMARY KEY,
     NombreDeUsuario NVARCHAR(50) UNIQUE,
     Email NVARCHAR(255),
     Nombre NVARCHAR(50),
     Apellido NVARCHAR(50),
+    ID_Configuracion INT FOREIGN KEY REFERENCES Configuracion(ID),
     Estado BIT NULL
 );
 
@@ -87,11 +98,25 @@ END;
 
 --#REGION (USUARIOS)
 
---SPs de USUARIOS 
+-- SPs de USUARIOS 
+-- SPs de USUARIOS 
 GO
 CREATE PROCEDURE SP_RECUPERARUSUARIOS
 AS BEGIN
-    SELECT * FROM Usuarios WHERE Estado IS NULL
+    SELECT
+        U.ID,
+        U.NombreDeUsuario,
+        U.Email,
+        U.Nombre,
+        U.Apellido,
+        C.NombreConfiguracion AS NombreConfiguracion,
+        U.Estado
+    FROM
+        Usuarios U
+    LEFT JOIN
+        Configuracion C ON U.ID_Configuracion = C.ID
+    WHERE
+        U.Estado IS NULL;
 END;
 
 
@@ -100,24 +125,24 @@ CREATE PROCEDURE SP_AGREGARUSUARIO
     @NombreDeUsuario NVARCHAR(50), 
     @Email NVARCHAR(255), 
     @Nombre NVARCHAR(50), 
-    @Apellido NVARCHAR(50)
+    @Apellido NVARCHAR(50),
+    @NombreConfiguracion NVARCHAR(50)
 AS 
 BEGIN
     DECLARE @ID INT
     SET @ID = (SELECT ID FROM Usuarios WHERE NombreDeUsuario = @NombreDeUsuario)
     IF (@ID IS NULL)
     BEGIN
-        INSERT INTO Usuarios (NombreDeUsuario, Email, Nombre, Apellido, Estado)
-        VALUES (@NombreDeUsuario, @Email, @Nombre, @Apellido, NULL)
+        INSERT INTO Usuarios (NombreDeUsuario, Email, Nombre, Apellido, ID_Configuracion, Estado)
+        VALUES (@NombreDeUsuario, @Email, @Nombre, @Apellido, (SELECT ID FROM Configuracion WHERE NombreConfiguracion = @NombreConfiguracion), NULL)
     END
     ELSE
     BEGIN
         UPDATE Usuarios
-        SET Email = @Email, Nombre = @Nombre, Apellido = @Apellido, Estado = NULL
+        SET Email = @Email, Nombre = @Nombre, Apellido = @Apellido, ID_Configuracion = (SELECT ID FROM Configuracion WHERE NombreConfiguracion = @NombreConfiguracion), Estado = NULL
         WHERE NombreDeUsuario = @NombreDeUsuario
     END
 END;
-
 
 GO
 CREATE PROCEDURE SP_ELIMINARUSUARIO 
@@ -130,22 +155,23 @@ BEGIN
     DELETE FROM UsuariosRoles WHERE IDUsuario = (SELECT ID FROM Usuarios WHERE NombreDeUsuario = @NombreDeUsuario)
 END;
 
-
 GO
 CREATE PROCEDURE SP_MODIFICARUSUARIO 
     @NombreDeUsuario NVARCHAR(50), 
     @Email NVARCHAR(255), 
     @Nombre NVARCHAR(50), 
-    @Apellido NVARCHAR(50)
+    @Apellido NVARCHAR(50),
+    @NombreConfiguracion NVARCHAR(50)
 AS 
 BEGIN
     UPDATE Usuarios
-    SET Email = @Email, Nombre = @Nombre, Apellido = @Apellido
+    SET Email = @Email, Nombre = @Nombre, Apellido = @Apellido, ID_Configuracion = (SELECT ID FROM Configuracion WHERE NombreConfiguracion = @NombreConfiguracion)
     WHERE NombreDeUsuario = @NombreDeUsuario
     DELETE FROM UsuariosRoles WHERE IDUsuario = (SELECT ID FROM Usuarios WHERE NombreDeUsuario = @NombreDeUsuario)
 END;
 
 --#ENDREGION
+
 
 
 
@@ -172,11 +198,65 @@ WHERE
     Usuarios.NombreDeUsuario = @NombredeUsuario
 END;
 
-
-
-
 --#ENDREGION
 
+--#REGION (CONFIGURACION)
+
+-- SP para recuperar configuraciones
+GO
+CREATE PROCEDURE SP_RECUPERARCONFIGURACIONES
+AS BEGIN
+    SELECT * FROM Configuracion WHERE Estado IS NULL
+END;
+
+-- SP para agregar una configuración
+GO
+CREATE PROCEDURE SP_AGREGARCONFIGURACION
+    @NombreConfiguracion NVARCHAR(50),
+    @Valor DECIMAL(18, 2),
+    @Descripcion NVARCHAR(255),
+    @Notificaciones bit
+AS BEGIN
+    DECLARE @ID INT
+    SET @ID = (SELECT ID FROM Configuracion WHERE NombreConfiguracion = @NombreConfiguracion)
+    IF (@ID IS NULL)
+    BEGIN
+        INSERT INTO Configuracion (NombreConfiguracion, Valor, Descripcion,Notificaciones, Estado)
+        VALUES (@NombreConfiguracion, @Valor, @Descripcion, @Notificaciones, NULL)
+    END
+    ELSE
+    BEGIN
+        UPDATE Configuracion
+        SET Valor = @Valor, Descripcion = @Descripcion, Notificaciones = @Notificaciones,Estado = NULL
+        WHERE NombreConfiguracion = @NombreConfiguracion
+    END
+END;
+
+-- SP para eliminar una configuración
+GO
+CREATE PROCEDURE SP_ELIMINARCONFIGURACION
+    @NombreConfiguracion NVARCHAR(50)
+AS BEGIN
+    UPDATE Configuracion
+    SET Estado = 1
+    WHERE NombreConfiguracion = @NombreConfiguracion
+END;
+
+-- SP para modificar una configuración
+GO
+CREATE PROCEDURE SP_MODIFICARCONFIGURACION
+    @NombreConfiguracion NVARCHAR(50),
+    @Valor DECIMAL(18, 2),
+    @Descripcion NVARCHAR(255),
+    @Notificaciones bit
+AS 
+BEGIN
+    UPDATE Configuracion
+    SET Valor = @Valor, Descripcion = @Descripcion, Notificaciones = @Notificaciones
+    WHERE NombreConfiguracion = @NombreConfiguracion
+END;
+
+--#ENDREGION
 
 
 --#REGION (PRUEBAS)
@@ -195,14 +275,39 @@ EXEC SP_RECUPERARROLES
 
 EXEC SP_ELIMINARROL 'Rol3'
 
+
+
+-- Mostrar todas las configuraciones
+SELECT * FROM Configuracion
+
+-- Llamar a las SP de Configuracion
+EXEC SP_RECUPERARCONFIGURACIONES
+
+-- Agregar o modificar una configuración
+EXEC SP_AGREGARCONFIGURACION 'Configuracion1', 1000.00, 'Descripción1', 'True'
+EXEC SP_AGREGARCONFIGURACION 'Configuracion2', 500.50, 'Descripción2', 'False'
+EXEC SP_AGREGARCONFIGURACION 'Configuracion3', 500.50, 'Descripción2', 'False'
+EXEC SP_AGREGARCONFIGURACION 'Configuracion4', 500.50, 'Descripción2', 'True'
+
+-- Mostrar todas las configuraciones después de agregar
+SELECT * FROM Configuracion
+
+-- Eliminar una configuración
+EXEC SP_ELIMINARCONFIGURACION 'Configuracion4'
+
+EXEC SP_RECUPERARCONFIGURACIONES
+
+
+
+
 -- Llamar a las SP de Usuarios
 EXEC SP_RECUPERARUSUARIOS
 
-EXEC SP_AGREGARUSUARIO 'Usuario1', 'usuario1@email.com', 'Nombre1', 'Apellido1'
-EXEC SP_AGREGARUSUARIO 'Usuario2', 'usuario2@email.com', 'Nombre2', 'Apellido2'
-EXEC SP_AGREGARUSUARIO 'Usuario3', 'usuario3@email.com', 'Nombre3', 'Apellido3'
+EXEC SP_AGREGARUSUARIO 'Usuario1', 'usuario1@email.com', 'Nombre1', 'Apellido1','Configuracion1'
+EXEC SP_AGREGARUSUARIO 'Usuario2', 'usuario2@email.com', 'Nombre2', 'Apellido2', 'Configuracion2'
+EXEC SP_AGREGARUSUARIO 'Usuario3', 'usuario3@email.com', 'Nombre3', 'Apellido3', 'Configuracion3'
 
-EXEC SP_MODIFICARUSUARIO 'Usuario1', 'usuario1_modificado@email.com', 'Nombre1_modificado', 'Apellido1_modificado'
+EXEC SP_MODIFICARUSUARIO 'Usuario1', 'usuario1_modificado@email.com', 'Nombre1_modificado', 'Apellido1_modificado', 'Configuracion3'
 
 EXEC SP_RECUPERARUSUARIOS
 

@@ -28,5 +28,11 @@ namespace CRUD
             FormUsuariosDGV formUsuariosDGV = new FormUsuariosDGV();
             formUsuariosDGV.ShowDialog();
         }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            FormConfiguracionDGV formConfiguracionDGV = new FormConfiguracionDGV();
+            formConfiguracionDGV.ShowDialog();
+        }
     }
 }

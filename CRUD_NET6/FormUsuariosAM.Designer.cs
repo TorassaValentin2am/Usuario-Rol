@@ -45,13 +45,15 @@
             dgvRolesDisponibles = new DataGridView();
             label4 = new Label();
             dgvRolesAsignados = new DataGridView();
+            cmbConfiguraciones = new ComboBox();
+            lblConfiguraciones = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvRolesDisponibles).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRolesAsignados).BeginInit();
             SuspendLayout();
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(171, 218);
+            btnCancelar.Location = new Point(168, 256);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(83, 26);
             btnCancelar.TabIndex = 37;
@@ -61,7 +63,7 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(34, 218);
+            btnAceptar.Location = new Point(31, 256);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(83, 26);
             btnAceptar.TabIndex = 36;
@@ -144,7 +146,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(385, 217);
+            btnEliminar.Location = new Point(461, 217);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 51;
@@ -154,7 +156,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(681, 217);
+            btnAgregar.Location = new Point(757, 217);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 50;
@@ -165,7 +167,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(668, 21);
+            label3.Location = new Point(744, 21);
             label3.Name = "label3";
             label3.Size = new Size(102, 15);
             label3.TabIndex = 46;
@@ -174,7 +176,7 @@
             // dgvRolesDisponibles
             // 
             dgvRolesDisponibles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRolesDisponibles.Location = new Point(590, 39);
+            dgvRolesDisponibles.Location = new Point(666, 39);
             dgvRolesDisponibles.Name = "dgvRolesDisponibles";
             dgvRolesDisponibles.RowTemplate.Height = 25;
             dgvRolesDisponibles.Size = new Size(244, 172);
@@ -183,7 +185,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(364, 21);
+            label4.Location = new Point(440, 21);
             label4.Name = "label4";
             label4.Size = new Size(96, 15);
             label4.TabIndex = 53;
@@ -192,17 +194,37 @@
             // dgvRolesAsignados
             // 
             dgvRolesAsignados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRolesAsignados.Location = new Point(286, 39);
+            dgvRolesAsignados.Location = new Point(362, 39);
             dgvRolesAsignados.Name = "dgvRolesAsignados";
             dgvRolesAsignados.RowTemplate.Height = 25;
             dgvRolesAsignados.Size = new Size(244, 172);
             dgvRolesAsignados.TabIndex = 52;
             // 
+            // cmbConfiguraciones
+            // 
+            cmbConfiguraciones.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbConfiguraciones.FormattingEnabled = true;
+            cmbConfiguraciones.Location = new Point(117, 204);
+            cmbConfiguraciones.Name = "cmbConfiguraciones";
+            cmbConfiguraciones.Size = new Size(121, 23);
+            cmbConfiguraciones.TabIndex = 54;
+            // 
+            // lblConfiguraciones
+            // 
+            lblConfiguraciones.AutoSize = true;
+            lblConfiguraciones.Location = new Point(17, 207);
+            lblConfiguraciones.Name = "lblConfiguraciones";
+            lblConfiguraciones.Size = new Size(97, 15);
+            lblConfiguraciones.TabIndex = 55;
+            lblConfiguraciones.Text = "Configuraciones:";
+            // 
             // FormUsuariosAM
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(852, 272);
+            ClientSize = new Size(929, 294);
+            Controls.Add(lblConfiguraciones);
+            Controls.Add(cmbConfiguraciones);
             Controls.Add(label4);
             Controls.Add(dgvRolesAsignados);
             Controls.Add(btnEliminar);
@@ -254,5 +276,7 @@
         private DataGridView dgvRolesDisponibles;
         private Label label4;
         private DataGridView dgvRolesAsignados;
+        private ComboBox cmbConfiguraciones;
+        private Label lblConfiguraciones;
     }
 }

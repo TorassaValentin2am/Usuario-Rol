@@ -76,6 +76,7 @@ namespace Modelo.Repositorios
                 command.Parameters.Add("@Email", System.Data.SqlDbType.NVarChar, 255).Value = usuario.Email;
                 command.Parameters.Add("@Nombre", System.Data.SqlDbType.NVarChar, 50).Value = usuario.Nombre;
                 command.Parameters.Add("@Apellido", System.Data.SqlDbType.NVarChar, 50).Value = usuario.Apellido;
+                command.Parameters.Add("@NombreConfiguracion", System.Data.SqlDbType.NVarChar, 20).Value = usuario.Configuracion.NombreConfiguracion;
                 command.ExecuteNonQuery();
 
                 using SqlCommand command2 = new SqlCommand();
@@ -170,6 +171,7 @@ namespace Modelo.Repositorios
                 usuarioModificado.Email = usuario.Email;
                 usuarioModificado.Nombre = usuario.Nombre;
                 usuarioModificado.Apellido = usuario.Apellido;
+                usuarioModificado.Configuracion = usuario.Configuracion;
                 usuarioModificado.Roles = usuario.Roles;
                 return true;
             }
@@ -196,6 +198,8 @@ namespace Modelo.Repositorios
                 command.Parameters.Add("@Email", System.Data.SqlDbType.NVarChar, 255).Value = usuario.Email;
                 command.Parameters.Add("@Nombre", System.Data.SqlDbType.NVarChar, 50).Value = usuario.Nombre;
                 command.Parameters.Add("@Apellido", System.Data.SqlDbType.NVarChar, 50).Value = usuario.Apellido;
+                command.Parameters.Add("@NombreConfiguracion", System.Data.SqlDbType.NVarChar, 20).Value = usuario.Configuracion.NombreConfiguracion;
+
                 command.ExecuteNonQuery();
 
                 using SqlCommand command2 = new SqlCommand();
@@ -257,6 +261,7 @@ namespace Modelo.Repositorios
                         usuario.Email = reader["Email"].ToString();
                         usuario.Nombre = reader["Nombre"].ToString();
                         usuario.Apellido = reader["Apellido"].ToString();
+                        usuario.Configuracion = RepositorioConfiguracion.Instancia.RecuperarConfiguracion(reader["NombreConfiguracion"].ToString());
 
                         using var command2 = new SqlCommand();
                         command2.CommandType = System.Data.CommandType.StoredProcedure;

@@ -14,8 +14,8 @@ namespace CRUD
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FormUsuariosAM formUsuariosAM = new FormUsuariosAM();
-            formUsuariosAM.ShowDialog();
+            FormUsuariosAM2 formUsuariosAM2 = new FormUsuariosAM2();
+            formUsuariosAM2.ShowDialog();
             ActualizarGrilla();
         }
 
@@ -24,8 +24,8 @@ namespace CRUD
             if (dgvUsuarios.Rows.Count > 0)
             {
                 var usuario = (Usuario)dgvUsuarios.CurrentRow.DataBoundItem;
-                FormUsuariosAM formUsuariosAM = new FormUsuariosAM(usuario);
-                formUsuariosAM.ShowDialog();
+                FormUsuariosAM2 formUsuariosAM2 = new FormUsuariosAM2(usuario);
+                formUsuariosAM2.ShowDialog();
                 ActualizarGrilla();
             }
         }
@@ -64,7 +64,7 @@ namespace CRUD
 
         private void CargarRolesdeUsuario()
         {
-            if (dgvUsuarios.Rows.Count > 0)
+            if (dgvUsuarios.Rows.Count > 0 && dgvUsuarios.SelectedRows.Count > 0)
             {
                 dgvRolesAsignados.DataSource = null;
                 dgvRolesAsignados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
