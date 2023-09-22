@@ -22,6 +22,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfiguracionAM));
             txtNombre = new TextBox();
             lblDescripcion = new Label();
             lblNombre = new Label();
@@ -109,7 +110,7 @@
             // numValor
             // 
             numValor.DecimalPlaces = 2;
-            numValor.Location = new Point(135, 130);
+            numValor.Location = new Point(135, 124);
             numValor.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numValor.Name = "numValor";
             numValor.Size = new Size(120, 23);
@@ -118,7 +119,7 @@
             // lblValor
             // 
             lblValor.AutoSize = true;
-            lblValor.Location = new Point(59, 132);
+            lblValor.Location = new Point(72, 126);
             lblValor.Name = "lblValor";
             lblValor.Size = new Size(36, 15);
             lblValor.TabIndex = 18;
@@ -128,7 +129,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(342, 272);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(491, 272);
             Controls.Add(lblValor);
             Controls.Add(numValor);
             Controls.Add(cbNotificaciones);

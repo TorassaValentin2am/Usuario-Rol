@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRolesDGV));
             dgvRoles = new DataGridView();
             lblRoles = new Label();
             btnAgregar = new Button();
@@ -88,6 +89,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(487, 279);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);

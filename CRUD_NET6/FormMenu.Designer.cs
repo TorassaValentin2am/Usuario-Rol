@@ -77,6 +77,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonHighlight;
+            BackgroundImage = Properties.Resources.wallpapersden_com_linux_retro_1920x1080;
             ClientSize = new Size(186, 247);
             Controls.Add(btnConfiguracion);
             Controls.Add(lblMenu);

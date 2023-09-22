@@ -146,7 +146,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(461, 217);
+            btnEliminar.Location = new Point(360, 220);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 51;
@@ -156,7 +156,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(757, 217);
+            btnAgregar.Location = new Point(643, 220);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 50;
@@ -167,7 +167,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(744, 21);
+            label3.Location = new Point(643, 24);
             label3.Name = "label3";
             label3.Size = new Size(102, 15);
             label3.TabIndex = 46;
@@ -176,7 +176,7 @@
             // dgvRolesDisponibles
             // 
             dgvRolesDisponibles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRolesDisponibles.Location = new Point(666, 39);
+            dgvRolesDisponibles.Location = new Point(565, 42);
             dgvRolesDisponibles.Name = "dgvRolesDisponibles";
             dgvRolesDisponibles.RowTemplate.Height = 25;
             dgvRolesDisponibles.Size = new Size(244, 172);
@@ -185,7 +185,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(440, 21);
+            label4.Location = new Point(339, 24);
             label4.Name = "label4";
             label4.Size = new Size(96, 15);
             label4.TabIndex = 53;
@@ -194,7 +194,7 @@
             // dgvRolesAsignados
             // 
             dgvRolesAsignados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvRolesAsignados.Location = new Point(362, 39);
+            dgvRolesAsignados.Location = new Point(261, 42);
             dgvRolesAsignados.Name = "dgvRolesAsignados";
             dgvRolesAsignados.RowTemplate.Height = 25;
             dgvRolesAsignados.Size = new Size(244, 172);
@@ -222,7 +222,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(929, 294);
+            BackgroundImage = Properties.Resources.wallpapersden_com_linux_retro_1920x1080;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(825, 298);
             Controls.Add(lblConfiguraciones);
             Controls.Add(cmbConfiguraciones);
             Controls.Add(label4);

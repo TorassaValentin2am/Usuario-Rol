@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+Y6k3mDXj3bBXvjQYrE9/jmdkY9D7Ru1s+F+9So9OczR/jS1mK9psxaSm1vLeisI1Cosx7NXlfl/V+OxT7ZCyA==",
+  "dgSpecHash": "dAumXEnfEPul75Gqr51jW7ScsCOcvOkJDmn27/slH5qTmyckgpyWObvxwA0asYkS+krDAYo7+71jMHqbqGOtMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Valen\\Desktop\\Programas en Base de Datos\\Rol-Usuarios\\Controladora\\Controladora.csproj",
+  "projectFilePath": "C:\\Users\\Valen\\Downloads\\git clone\\Usuario-Rol\\Controladora\\Controladora.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Valen\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Valen\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",

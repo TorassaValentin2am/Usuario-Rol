@@ -22,6 +22,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfiguracionDGV));
             dgvConfiguraciones = new DataGridView();
             lblTitulo = new Label();
             btnAgregar = new Button();
@@ -42,7 +43,7 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(184, 12);
+            lblTitulo.Location = new Point(202, 9);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(83, 15);
             lblTitulo.TabIndex = 1;
@@ -50,7 +51,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(12, 244);
+            btnAgregar.Location = new Point(12, 257);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(75, 23);
             btnAgregar.TabIndex = 2;
@@ -60,7 +61,7 @@
             // 
             // btnModificar
             // 
-            btnModificar.Location = new Point(184, 244);
+            btnModificar.Location = new Point(184, 257);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(75, 23);
             btnModificar.TabIndex = 3;
@@ -70,7 +71,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(373, 244);
+            btnEliminar.Location = new Point(375, 257);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 4;
@@ -82,7 +83,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(487, 279);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(487, 292);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);

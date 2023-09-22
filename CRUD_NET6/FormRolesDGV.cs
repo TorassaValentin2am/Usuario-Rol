@@ -44,7 +44,7 @@ namespace CRUD
                 }
                 else
                 {
-                    MessageBox.Show("No se puede eliminar un rol asociado a un usuario, primero elimina el usuario asociado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);  
+                    MessageBox.Show("No se puede eliminar un rol asociado a un usuario, primero elimina el usuario asociado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }

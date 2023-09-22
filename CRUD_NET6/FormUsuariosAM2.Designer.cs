@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuariosAM2));
             btnCancelar = new Button();
             btnAceptar = new Button();
             txtNombre = new TextBox();
@@ -144,7 +145,7 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(371, 233);
+            btnLimpiar.Location = new Point(497, 199);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(75, 23);
             btnLimpiar.TabIndex = 51;
@@ -202,7 +203,7 @@
             // 
             lbAsignados.FormattingEnabled = true;
             lbAsignados.ItemHeight = 15;
-            lbAsignados.Location = new Point(371, 121);
+            lbAsignados.Location = new Point(370, 129);
             lbAsignados.Name = "lbAsignados";
             lbAsignados.Size = new Size(120, 94);
             lbAsignados.TabIndex = 56;
@@ -220,6 +221,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(578, 294);
             Controls.Add(cmbDisponibles);
             Controls.Add(lbAsignados);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuariosDGV));
             btnEliminar = new Button();
             btnModificar = new Button();
             btnAgregar = new Button();
@@ -111,6 +112,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(849, 279);
             Controls.Add(label1);
             Controls.Add(dgvRolesAsignados);

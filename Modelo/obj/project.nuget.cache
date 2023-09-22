@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9TWyMsbTAtdLTdP6pRwAFCe39r/0c5BCyAHYrYFYdS3BAAuql5f+wuazNvjqkedBz0JlFCR3lgOO4y+lW507lg==",
+  "dgSpecHash": "djs6TdCfDuacRHcAkT8rGOjfGsL4WhZzAnQQMzqMN1MrOQylH9dtS3cRcaBXGd0f5jDLkE3lrqUZpGx5oFrySg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Valen\\Desktop\\Programas en Base de Datos\\Rol-Usuarios\\Modelo\\Modelo.csproj",
+  "projectFilePath": "C:\\Users\\Valen\\Downloads\\git clone\\Usuario-Rol\\Modelo\\Modelo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Valen\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Valen\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
