@@ -247,7 +247,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormUsuariosAM";
-            Text = "FormTicketsAM";
+            Text = "Agregar o Modificar Usuarios";
             Load += FormUsuariosAM_Load;
             ((System.ComponentModel.ISupportInitialize)dgvRolesDisponibles).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvRolesAsignados).EndInit();

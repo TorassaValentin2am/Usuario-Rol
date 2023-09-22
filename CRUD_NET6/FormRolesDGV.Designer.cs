@@ -100,7 +100,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormRolesDGV";
-            Text = "FormPasajerosDGV";
+            Text = "Roles";
             Load += FormRolesDGV_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvRoles).EndInit();
             ResumeLayout(false);

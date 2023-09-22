@@ -246,7 +246,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormUsuariosAM2";
-            Text = "FormTicketsAM";
+            Text = "Agregar o Modificar Usuarios";
             Load += FormUsuariosAM2_Load;
             ResumeLayout(false);
             PerformLayout();

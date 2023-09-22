@@ -122,7 +122,7 @@
             Controls.Add(lblUsuarios);
             Controls.Add(dgvUsuarios);
             Name = "FormUsuariosDGV";
-            Text = "FormTicketsDGV";
+            Text = "Usuarios";
             Load += FormUsuariosDGV_Load;
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvRolesAsignados).EndInit();

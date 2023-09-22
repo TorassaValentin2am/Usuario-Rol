@@ -95,7 +95,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormConfiguracionDGV";
-            Text = "FormPasajerosDGV";
+            Text = "Configuraciones";
             Load += FormConfiguracionDGV_Load;
             ((System.ComponentModel.ISupportInitialize)dgvConfiguraciones).EndInit();
             ResumeLayout(false);

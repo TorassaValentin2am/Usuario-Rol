@@ -89,7 +89,7 @@
             MinimizeBox = false;
             Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormPrincipal";
+            Text = "Menu";
             ResumeLayout(false);
             PerformLayout();
         }

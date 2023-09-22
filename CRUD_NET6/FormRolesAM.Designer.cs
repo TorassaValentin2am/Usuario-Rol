@@ -125,7 +125,7 @@
             Controls.Add(lblPasaporte);
             Controls.Add(lblAgregaroModificar);
             Name = "FormRolesAM";
-            Text = "FormRolesAM";
+            Text = "Agregar o Modificar Roles";
             Load += FormRolesAM_Load_1;
             ResumeLayout(false);
             PerformLayout();

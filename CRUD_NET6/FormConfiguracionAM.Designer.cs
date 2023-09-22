@@ -143,7 +143,7 @@
             Controls.Add(lblNombre);
             Controls.Add(lblAgregaroModificar);
             Name = "FormConfiguracionAM";
-            Text = "FormRolesAM";
+            Text = "Agregar o Modificar Configuraciones";
             Load += FormConfiguracionAM_Load;
             ((System.ComponentModel.ISupportInitialize)numValor).EndInit();
             ResumeLayout(false);
